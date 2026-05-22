@@ -1,0 +1,26 @@
+manifestVersion: 1
+id: weberon-glpi
+name: GLPI
+tagline: Service Desk e ITSM completo
+icon: icon.png
+category: productivity
+version: "1.0.0"
+
+port: 8080
+path: ""
+
+description: |
+  GLPI é um sistema open-source poderoso para Gestão de Serviços de TI (ITSM/ITIL). 
+  Inclui suporte técnico, inventário de hardware/software, gerenciamento de licenças e muito mais.
+
+developer: Weber O.
+website: https://glpi-project.org
+support: https://github.com/glpi-project/glpi/issues
+
+releaseNotes: |
+  • Primeira versão no Umbrel Community Store
+
+dependencies: []
+
+defaultUsername: glpi
+defaultPassword: glpi
