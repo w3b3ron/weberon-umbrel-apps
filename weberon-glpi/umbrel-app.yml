@@ -2,7 +2,7 @@ manifestVersion: 1
 id: weberon-glpi
 name: GLPI
 tagline: Service Desk e ITSM completo
-icon: icon.png
+icon: https://raw.githubusercontent.com/w3b3ron/weberon-umbrel-apps/master/weberon-glpi/icon.png
 category: productivity
 version: "1.0.1"
 
@@ -21,7 +21,10 @@ releaseNotes: |
   • Primeira versão estável no Umbrel
 
 dependencies: []
-gallery: []
+gallery:
+  - https://raw.githubusercontent.com/w3b3ron/weberon-umbrel-apps/master/weberon-glpi/gallery/1.png
+  - https://raw.githubusercontent.com/w3b3ron/weberon-umbrel-apps/master/weberon-glpi/gallery/2.png
+  - https://raw.githubusercontent.com/w3b3ron/weberon-umbrel-apps/master/weberon-glpi/gallery/3.png
 submitter: Weber O.
 submission: ""
 
