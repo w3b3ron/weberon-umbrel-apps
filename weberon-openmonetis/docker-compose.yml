@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: openmonetis
+      POSTGRES_PASSWORD: ${APP_PASSWORD}
+      POSTGRES_DB: openmonetis_db
+      POSTGRES_INITDB_ARGS: "-E UTF8 --locale=C"
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ${APP_DATA_DIR}/db:/var/lib/postgresql/data
+    networks:
+      - openmonetis-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openmonetis -d openmonetis_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  app:
+    image: felipegcoutinho/openmonetis:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://openmonetis:${APP_PASSWORD}@db:5432/openmonetis_db
+      BETTER_AUTH_SECRET: ${APP_SEED}
+      BETTER_AUTH_URL: http://${DEVICE_DOMAIN_NAME}:3000
+    volumes:
+      - ${APP_DATA_DIR}/app:/app/data
+    networks:
+      - openmonetis-net
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  app_proxy:
+    image: getumbrel/app-proxy:v0.1.1
+    restart: on-failure
+    environment:
+      APP_HOST: app
+      APP_PORT: 3000
+    networks:
+      - openmonetis-net
+
+networks:
+  openmonetis-net:
+    driver: bridge

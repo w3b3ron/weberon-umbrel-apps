@@ -1,0 +1,39 @@
+manifestVersion: 1
+id: weberon-openmonetis
+name: OpenMonetis
+tagline: Gestão financeira pessoal self-hosted e open source
+icon: https://raw.githubusercontent.com/w3b3ron/weberon-umbrel-apps/master/weberon-openmonetis/icon.svg
+category: finance
+version: "2.6.2"
+
+port: 3000
+path: ""
+
+description: |
+  OpenMonetis é um projeto pessoal de gestão financeira para organizar suas finanças de forma clara e segura.
+  Tenha controle total sobre suas contas, cartões, gastos e receitas em um único lugar.
+  
+  Principais funcionalidades:
+  • Gestão de contas e transações com categorização inteligente.
+  • Dashboard interativo com gráficos de evolução e relatórios detalhados.
+  • Controle de faturas de cartão de crédito e orçamentos por categoria.
+  • Importação de extratos OFX e XLS/XLSX.
+  • Insights personalizados com IA (opcional).
+  • Gestão colaborativa com diferentes níveis de permissão.
+
+developer: Felipe Coutinho
+website: https://github.com/felipegcoutinho/openmonetis
+support: https://github.com/felipegcoutinho/openmonetis/issues
+
+releaseNotes: |
+  • Versão inicial para Umbrel baseada no release 2.6.2.
+
+dependencies: []
+gallery:
+  - https://raw.githubusercontent.com/felipegcoutinho/openmonetis/main/public/images/dashboard-preview-light.png
+
+submitter: Weber O.
+submission: ""
+
+defaultUsername: ""
+defaultPassword: ""
