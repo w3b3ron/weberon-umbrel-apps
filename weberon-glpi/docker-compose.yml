@@ -5,7 +5,7 @@ services:
     image: mariadb:10.11
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${APP_PASSWORD}
       MYSQL_DATABASE: glpi
       MYSQL_USER: glpi
       MYSQL_PASSWORD: ${APP_PASSWORD}
@@ -26,6 +26,7 @@ services:
       GLPI_DB_NAME: glpi
       GLPI_DB_CHARSET: utf8mb4
       GLPI_INSTALL_MODE: auto
+      GLPI_DB_PORT: 3306
 
     volumes:
       - ${APP_DATA_DIR}/glpi:/var/www/html

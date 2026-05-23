@@ -30,8 +30,8 @@ services:
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://openmonetis:${APP_PASSWORD}@db:5432/openmonetis_db
-      BETTER_AUTH_SECRET: ${APP_SEED}
-      BETTER_AUTH_URL: http://${DEVICE_DOMAIN_NAME}:3000
+      BETTER_AUTH_SECRET: ${APP_PASSWORD}
+      BETTER_AUTH_URL: http://${DEVICE_DOMAIN_NAME}
     volumes:
       - ${APP_DATA_DIR}/app:/app/data
     networks:
