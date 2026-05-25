@@ -15,6 +15,7 @@ description: |
 
 developer: Weber O.
 website: https://glpi-project.org
+repo: https://github.com/w3b3ron/weberon-umbrel-apps
 support: https://github.com/glpi-project/glpi/issues
 
 releaseNotes: |

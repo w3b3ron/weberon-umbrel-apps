@@ -47,7 +47,7 @@ services:
     image: getumbrel/app-proxy:v0.1.1
     restart: on-failure
     environment:
-      APP_HOST: app
+      APP_HOST: weberon-openmonetis_app_1
       APP_PORT: 3000
     networks:
       - openmonetis-net
